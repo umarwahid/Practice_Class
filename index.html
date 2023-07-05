@@ -4,24 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+            margin:0 auto;
+        }
+    </style>
 </head>
 <body>
-    Hello World!
-
+<div class="container">
+    <h3>Enter Number</h3>
+    <br>
+    <input type="number" id="value"><br><br>
+    <button type="button" onclick="submit()">Submit</button>
+    <p id="result"></p>
+</div>
     <script>
-        for(i=1 ; i<=100 ; i++) {
-    if (i % 3 ===0 && i % 5 === 0 ){
-        console.log("fizzbizz")
-    }
-    else if (i % 3 === 0){
-        console.log("fizz");
-    } else if (i % 5 === 0){
-        console.log("bizz");
-    } else {
-        console.log(i)
-    }
-}
+        function submit() {
+            let getinput = document.getElementById("value").value;
+            let result = document.getElementById("result");
 
+            for (let i = 1; i <= getinput; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    result.innerHTML += "fizzbuzz<br>";
+                } else if (i % 3 === 0) {
+                    result.innerHTML += "fizz<br>";
+                } else if (i % 5 === 0) {
+                    result.innerHTML += "bizz<br>";
+                } else {
+                    result.innerHTML += i + "<br>";
+                }
+            }
+        }
     </script>
 </body>
 </html>
